@@ -5,21 +5,16 @@ using UnityEngine.UI;
 
 public class GameControllerFixed : MonoBehaviour
 {
-    public GameObject EnemyPrefab;
-    [Header("DONT FIX HERE, LOOK ON GAMEPLAY PREFERENCES")]
-    public float enemyMinimumSpeed;
-    public float enemyMaximumSpeed;
-    public float enemyDamage;
-    public float enemyHealth;
-    public float enemyMaxHealth;
-    public float enemyAttackDistance;
-    public float bonusTimer;
+    [HideInInspector]
+    public GameObject enemyPrefab, enemyHitPrefab;
+    
+    [Header("DONT FIX DOWN HERE, LOOK ON GAMEPLAY PREFERENCES")]
+    [HideInInspector]
+    public float enemyMinimumSpeed, enemyMaximumSpeed, enemyDamage, enemyHealth, enemyMaxHealth, enemyAttackDistance, bonusTimer;
     float _bonus;
 
-    [Header("Spawn Enemies Counter")]
-    public int InitialEnemyCounter = 10;
-    public int CurrentEnemyCounter = 10;
-    public int EnemyCounterIncreaser = 5;
+    [HideInInspector]
+    public int InitialEnemyCounter = 10, CurrentEnemyCounter = 10, EnemyCounterIncreaser = 5;
 
     float cameraHeight;
 
@@ -36,7 +31,7 @@ public class GameControllerFixed : MonoBehaviour
     [Header("UI Elements")]
     public Image redFillingImage;
     public Text enemiesCounterText;
-    public GameObject restart;
+
     [Header("How many enemies player already kill")]
     public float AlreadyKilled = 0;
     [Header("How many enemies need to get killed")]
@@ -103,8 +98,9 @@ public class GameControllerFixed : MonoBehaviour
             Vector3 spawnPos = RandomCircle(transform.position, randomRadius);
             if (!stopSpawnEnemies)
             {
-                GameObject _e = Instantiate(EnemyPrefab, spawnPos, Quaternion.identity);
+                GameObject _e = Instantiate(enemyPrefab, spawnPos, Quaternion.identity);
                 EnemyController ec = _e.GetComponent<EnemyController>();
+                ec.enemyHitPrefab = enemyHitPrefab;
                 ec.maxHealth = enemyMaxHealth;
                 ec.health = enemyHealth;
                 ec.minimumSpeed = enemyMinimumSpeed;

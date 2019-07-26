@@ -18,6 +18,7 @@ public class EnemyController : MonoBehaviour
     [Header("Death and Score")]
     public bool activateDestructionProtocol;
     public bool givePointsToPlayer = false;
+    public GameObject enemyHitPrefab;
     float destrTimer = 1;
     byte point = 0;
     float speed;
@@ -91,7 +92,7 @@ public class EnemyController : MonoBehaviour
             else
                 TakeDamageSystem();
 
-            
+            player.GetComponent<PlayerController>().imHitEnemy = true;
             activateDestructionProtocol = true;
         }
     }
@@ -100,6 +101,13 @@ public class EnemyController : MonoBehaviour
     {
         health -= player.GetComponent<PlayerController>().damage;
         if (health <= 0)
+        {
             givePointsToPlayer = true;
+            if (enemyHitPrefab != null)
+            {
+                GameObject deathParticles = Instantiate(enemyHitPrefab);
+                Destroy(deathParticles, 2);
+            }
+        }
     }
 }

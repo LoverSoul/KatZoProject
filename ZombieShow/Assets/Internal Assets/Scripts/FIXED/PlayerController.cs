@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
 {
     [Header("Pause, death, gameplay stop")]
     public bool gameplayIsActive = true;
+    public GameObject slashPrefab;
     [SerializeField]
     public LineRenderer _directionLine;
 
@@ -28,6 +29,7 @@ public class PlayerController : MonoBehaviour
     Coroutine _rotateCoroutine;
     public bool doMovement;
     public bool imAttacking;
+    public bool imHitEnemy;
 
     [Header("Player Canvas")]
     public Canvas HealthCanvas;
@@ -62,6 +64,7 @@ public class PlayerController : MonoBehaviour
             }
 
             MovementAction();
+            SlashController();
         }
     }
 
@@ -118,10 +121,12 @@ public class PlayerController : MonoBehaviour
             {
                 doMovement = false;
                 imAttacking = false;
+                return;
             }
-            return;
+            
         }
     }
+
 
     public IEnumerator RotateToClick(Vector3 newLocalTarget, float time)
     {
@@ -141,5 +146,19 @@ public class PlayerController : MonoBehaviour
     public void UIHealthDemonstration()
     {
         playerHealthImage.fillAmount = health / maxHealth;
+    }
+
+    public void SlashController()
+    {
+        if (imHitEnemy)
+        {
+            if (slashPrefab != null)
+            {
+                GameObject slash = Instantiate(slashPrefab);
+                slash.transform.rotation = transform.rotation;
+                Destroy(slash, 3);
+            }
+        }
+        imHitEnemy = false;
     }
 }

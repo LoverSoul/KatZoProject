@@ -431,7 +431,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &94538577
 MonoBehaviour:
@@ -2929,6 +2929,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameplayIsActive: 1
+  slashPrefab: {fileID: 0}
   _directionLine: {fileID: 256298018}
   damage: 0
   health: 0
@@ -2942,6 +2943,7 @@ MonoBehaviour:
     m_Bits: 1024
   doMovement: 0
   imAttacking: 0
+  imHitEnemy: 0
   HealthCanvas: {fileID: 887213841}
   playerHealthImage: {fileID: 1178886464}
 --- !u!4 &1797790554 stripped
@@ -3423,8 +3425,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ce479bab89fd5341b9058f593792fd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemyPrefab: {fileID: 2708647488954365114, guid: 964cd9ef882c6cd4a92ab394c994c28c,
-    type: 3}
+  enemyPrefab: {fileID: 0}
+  enemyHitPrefab: {fileID: 0}
   enemyMinimumSpeed: 0
   enemyMaximumSpeed: 0
   enemyDamage: 0
@@ -3440,7 +3442,6 @@ MonoBehaviour:
   timeBeforeSpawn: 2
   redFillingImage: {fileID: 1774309772}
   enemiesCounterText: {fileID: 1637181137}
-  restart: {fileID: 0}
   AlreadyKilled: 0
   enemiesNeedToKill: 100
   collidersObj: {fileID: 109002181}
@@ -3460,7 +3461,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!114 &1948029214
 MonoBehaviour:
@@ -3474,11 +3475,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdd55d3db1660a4418aca058c3fa8017, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  slashPrefab: {fileID: 7874031599163054535, guid: 6d88003565e72ba4686f5b8f6904c0f6,
+    type: 3}
   playerHealth: 100
   playerMaxHealth: 100
   playerRotationSpeed: 20
   playerMovementSpeed: 40
   playerDamage: 15
+  enemy: {fileID: 2708647488954365114, guid: 964cd9ef882c6cd4a92ab394c994c28c, type: 3}
+  enemyHitPrefab: {fileID: 2021940275781042869, guid: ec0a883242366294897360f30aa3117d,
+    type: 3}
   enemyHealth: 10
   enemyDamage: 1
   enemyMinimumSpeed: 2
@@ -3610,7 +3616,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2042078140
 MonoBehaviour:
