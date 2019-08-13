@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class PlayerController : MonoBehaviour
 {
     [Header("Pause, death, gameplay stop")]
+    public AudioSource slashEffectSound;
     public bool gameplayIsActive = true;
     public GameObject slashPrefab;
     [SerializeField]
@@ -34,6 +35,7 @@ public class PlayerController : MonoBehaviour
     [Header("Player Canvas")]
     public Canvas HealthCanvas;
     public Image playerHealthImage;
+    public HitPlayerEffect hitEffect;
     
 
 
@@ -103,6 +105,10 @@ public class PlayerController : MonoBehaviour
         Time.timeScale = 1f;
         _directionLine.enabled = false;
         doMovement = true;
+
+        if (slashEffectSound !=null)
+        if (!slashEffectSound.isPlaying) 
+        slashEffectSound.Play();
         
     }
 

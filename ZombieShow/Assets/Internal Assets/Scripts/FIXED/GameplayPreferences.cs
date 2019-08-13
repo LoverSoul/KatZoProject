@@ -21,6 +21,7 @@ public class GameplayPreferences : MonoBehaviour
     public GameObject enemy;
     public GameObject enemyHitPrefab;
     public float enemyHealth;
+    public float enemyMaxHealth;
     public float enemyDamage;
     public float enemyMinimumSpeed;
     public float enemyMaximumSpeed;
@@ -59,6 +60,7 @@ public class GameplayPreferences : MonoBehaviour
         controller.enemyPrefab = enemy;
         controller.enemyHitPrefab = enemyHitPrefab;
         controller.enemyHealth = enemyHealth;
+        controller.enemyMaxHealth = enemyMaxHealth;
         controller.enemyMinimumSpeed = enemyMinimumSpeed;
         controller.enemyMaximumSpeed = enemyMaximumSpeed;
         controller.enemyDamage = enemyDamage;

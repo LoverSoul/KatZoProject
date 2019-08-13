@@ -8,11 +8,13 @@ public class EnemyController : MonoBehaviour
     public float health;
     public float maxHealth;
     public float damage;
+    public bool getPushedBack;
 
    [Header("Speed Setting")]
     public float minimumSpeed = 2f;
     public float maximumSpeed = 2f;
     public float attackDistance = 1;
+    public float distanceOfPushing = 2;
 
      GameObject player;
     [Header("Death and Score")]
@@ -22,7 +24,8 @@ public class EnemyController : MonoBehaviour
     float destrTimer = 1;
     byte point = 0;
     float speed;
-
+    byte pushInit = 0;
+    Vector3 push;
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -45,7 +48,10 @@ public class EnemyController : MonoBehaviour
 
     void FollowTarget()
     {
-        transform.position = Vector3.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
+        if (!getPushedBack)
+            transform.position = Vector3.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
+        else
+            PushBackward();
     }
 
     void SelfDestrucionProtocol()
@@ -64,9 +70,14 @@ public class EnemyController : MonoBehaviour
 
     void AttackPlayerSystem()
     {
-        givePointsToPlayer = false;
-        player.GetComponent<PlayerController>().health -= damage;
-        player.GetComponent<PlayerController>().UIHealthDemonstration();
+        if (pushInit == 0)
+        {
+            givePointsToPlayer = false;
+            player.GetComponent<PlayerController>().health -= damage;
+            player.GetComponent<PlayerController>().UIHealthDemonstration();
+            player.GetComponent<PlayerController>().hitEffect.PlayerWasHit();
+            activateDestructionProtocol = true;
+        }
     }
 
     void GivePointsToPlayer()
@@ -85,6 +96,7 @@ public class EnemyController : MonoBehaviour
 
     void ControlDistance()
     {
+
         if (Vector3.Distance(transform.position, player.transform.position) < attackDistance)
         {
             if (!GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().imAttacking)
@@ -92,22 +104,46 @@ public class EnemyController : MonoBehaviour
             else
                 TakeDamageSystem();
 
-            player.GetComponent<PlayerController>().imHitEnemy = true;
-            activateDestructionProtocol = true;
         }
     }
 
     void TakeDamageSystem()
     {
-        health -= player.GetComponent<PlayerController>().damage;
+        
+        if (pushInit==0)
+            health -= player.GetComponent<PlayerController>().damage;
+
         if (health <= 0)
         {
+            player.GetComponent<PlayerController>().imHitEnemy = true;
+            activateDestructionProtocol = true;
+
             givePointsToPlayer = true;
             if (enemyHitPrefab != null)
             {
                 GameObject deathParticles = Instantiate(enemyHitPrefab);
                 Destroy(deathParticles, 2);
             }
+        }
+        
+        else
+            getPushedBack = true;
+        
+    }
+
+    void PushBackward()
+    {
+        if (pushInit == 0)
+        {
+            push = transform.position + player.transform.position;
+            pushInit++;
+        }
+
+        transform.position = Vector3.MoveTowards(transform.position, push, speed * 10 * Time.deltaTime);
+        if (Vector3.Distance(transform.position, push) < distanceOfPushing)
+        {
+            pushInit = 0;
+            getPushedBack = false;
         }
     }
 }
