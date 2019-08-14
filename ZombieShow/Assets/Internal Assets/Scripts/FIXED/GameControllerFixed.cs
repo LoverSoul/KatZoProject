@@ -8,14 +8,21 @@ public class GameControllerFixed : MonoBehaviour
     [HideInInspector]
     public GameObject enemyPrefab, enemyHitPrefab;
     
-    [Header("DONT FIX DOWN HERE, LOOK ON GAMEPLAY PREFERENCES")]
+   // [Header("DONT FIX DOWN HERE, LOOK ON GAMEPLAY PREFERENCES")]
     [HideInInspector]
     public float enemyMinimumSpeed, enemyMaximumSpeed, enemyDamage, enemyHealth, enemyMaxHealth, enemyAttackDistance, bonusTimer;
     float _bonus;
 
-    [HideInInspector]
-    public int InitialEnemyCounter = 10, CurrentEnemyCounter = 10, EnemyCounterIncreaser = 5;
+    [Header("Time before spawn a new wave")]
+    [Range(0, 2f)]
+    public float timeBeforeSpawn = 1;
+    float tbs;
 
+    public AnimationCurve EnemiesSpawnCurve;
+    public int InitialEnemyCounter = 10, CurrentEnemyCounter = 10;// EnemyCounterIncreaser = 5;
+    float spawnTimer;
+    Keyframe lastCurve;
+    float curve;
     float cameraHeight;
 
     [Header("Spawn Enemy Radius")]
@@ -23,10 +30,7 @@ public class GameControllerFixed : MonoBehaviour
     public float maxSpawnRadius = 32f;
     Coroutine spawn;
 
-    [Header("Time before spawn a new wave")]
-    public float timeBeforeSpawn = 3;
-    float tbs;
-   
+  
 
     [Header("UI Elements")]
     public Image redFillingImage;
@@ -56,17 +60,32 @@ public class GameControllerFixed : MonoBehaviour
         BordersColliderCreator();
         tbs = timeBeforeSpawn;
         _bonus = bonusTimer;
-       
+        lastCurve = EnemiesSpawnCurve[EnemiesSpawnCurve.length-1];
+        curve = lastCurve.time;
+        
     }
 
     void Update()
     {
-        if (!stopSpawnEnemies)
+
+         if (!stopSpawnEnemies)
         {
             tbs -= Time.deltaTime;
+
+            if (spawnTimer < curve)
+                spawnTimer += Time.deltaTime;
+            else
+                spawnTimer = 0;
+
+            float curveEva = EnemiesSpawnCurve.Evaluate(spawnTimer);
+            int ce = (int)curveEva;
+            CurrentEnemyCounter = ce;
+            Debug.Log(tbs);
+            
+
             if (tbs <= 0)
             {
-                spawn = StartCoroutine(SpawnWave(CurrentEnemyCounter));
+                 spawn = StartCoroutine(SpawnWave(CurrentEnemyCounter));
                 tbs = timeBeforeSpawn;
             }
         }
@@ -88,8 +107,7 @@ public class GameControllerFixed : MonoBehaviour
 
     private IEnumerator SpawnWave(int enemiesToSpawn)
     {
-        CurrentEnemyCounter += EnemyCounterIncreaser;
-
+       
 
         for (int i = 0; i < enemiesToSpawn; i++)
         {
@@ -108,7 +126,7 @@ public class GameControllerFixed : MonoBehaviour
                 ec.damage = enemyDamage;
                 ec.attackDistance = enemyAttackDistance;
             }
-            yield return new WaitForSeconds(Random.Range(0f, 0.3f));
+            yield return new WaitForSeconds(1);
         }
     }
 

@@ -29,6 +29,8 @@ public class HitPlayerEffect : MonoBehaviour
             cam = Camera.main;
             cameraTransform = cam.transform.position;
         }
+        ts = timerOfShake;
+        tbs = timerBetweenShakes;
     }
 
     void Update()
