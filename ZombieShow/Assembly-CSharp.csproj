@@ -75,6 +75,7 @@
      <Compile Include="Assets\Internal Assets\Scripts\FIXED\HitPlayerEffect.cs" />
      <Compile Include="Assets\Internal Assets\Scripts\FIXED\Notifications.cs" />
      <Compile Include="Assets\Internal Assets\Scripts\FIXED\PlayerController.cs" />
+     <Compile Include="Assets\Internal Assets\Scripts\UI\UIControllerScript.cs" />
      <None Include="Assets\Internal Assets\Shaders\OptimisationShader.shader" />
      <None Include="Assets\FacebookSDK\link.xml" />
  <Reference Include="Unity.TextMeshPro.Editor">
