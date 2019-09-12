@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.4476701, g: 0.49764502, b: 0.57538354, a: 1}
+  m_IndirectSpecularColor: {r: 0.44766945, g: 0.4976443, b: 0.5753826, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3940,6 +3940,8 @@ MonoBehaviour:
   AlreadyKilled: 0
   enemiesNeedToKill: 100
   collidersObj: {fileID: 109002181}
+  moveBorder: {fileID: 97912597}
+  forwardBorderDebug: 4
   stopSpawnEnemies: 0
   bonusFillImage: {fileID: 1456730452}
   bonusText: {fileID: 509579494}
@@ -3976,7 +3978,7 @@ MonoBehaviour:
   playerMaxHealth: 100
   playerRotationSpeed: 20
   playerMovementSpeed: 40
-  playerDamage: 15
+  playerDamage: 150
   enemy: {fileID: 2708647488954365114, guid: 964cd9ef882c6cd4a92ab394c994c28c, type: 3}
   enemyHitPrefab: {fileID: 2021940275781042869, guid: ec0a883242366294897360f30aa3117d,
     type: 3}
@@ -4664,6 +4666,11 @@ PrefabInstance:
       propertyPath: colliders.m_Bits
       value: 1024
       objectReference: {fileID: 0}
+    - target: {fileID: 3502650395120447711, guid: a22ba7bf123b73349b19924bdc957cdb,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3502650395120447696, guid: a22ba7bf123b73349b19924bdc957cdb,
         type: 3}
       propertyPath: m_IsTrigger
@@ -4678,11 +4685,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: -2.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 3502650395120447711, guid: a22ba7bf123b73349b19924bdc957cdb,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3502650395120447697, guid: a22ba7bf123b73349b19924bdc957cdb, type: 3}

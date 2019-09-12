@@ -43,6 +43,8 @@ public class GameControllerFixed : MonoBehaviour
 
     [Header("Borders")]
     public GameObject collidersObj;
+    public GameObject moveBorder;
+    public float forwardBorderDebug = 2f;
 
     [Header("Stop Game")]
     public bool stopSpawnEnemies;
@@ -103,6 +105,10 @@ public class GameControllerFixed : MonoBehaviour
         float x = screenScale.x * cameraHeight;
         float y = screenScale.y * cameraHeight;
         collidersObj.transform.localScale = new Vector3(x,y, 1);
+        if (moveBorder != null)
+        {
+            moveBorder.transform.localPosition = new Vector3(moveBorder.transform.localPosition.x, moveBorder.transform.localPosition.y - forwardBorderDebug, moveBorder.transform.localPosition.z);
+        }
     }
 
     private IEnumerator SpawnWave(int enemiesToSpawn)
