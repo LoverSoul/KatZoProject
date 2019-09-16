@@ -12,16 +12,18 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     public LineRenderer _directionLine;
 
+    [Header("Players Damage")]
     public float damage;
-
+    [Header("Players Health")]
     public float health;
-
     public float maxHealth;
 
-
+    [Header("Movement Parameters")]
     public float rotationSpeed = 10;
-
     public float movementSpeed = 5;
+    [Header("Movement Distance")]
+    public float minMovementDistance = 1f;
+    public float maxMovementDistance = 10;
 
     public float timeSlowsDown;
     public GameObject navigator;
@@ -84,9 +86,10 @@ public class PlayerController : MonoBehaviour
                 StopCoroutine(_rotateCoroutine);
                 _rotateCoroutine = null;
             }
-            var point = hit.point;
+            Vector3 point = hit.point;
             point.y = transform.position.y;
-            navigator.transform.position = point;
+                navigator.transform.position = point;
+          
             _rotateCoroutine = StartCoroutine(RotateToClick(navigator.transform.position - transform.position, rotationSpeed / 100));
         }
     }

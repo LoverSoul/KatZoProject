@@ -3198,8 +3198,10 @@ MonoBehaviour:
   damage: 0
   health: 0
   maxHealth: 0
-  rotationSpeed: 5
+  rotationSpeed: 10
   movementSpeed: 20
+  minMovementDistance: 1
+  maxMovementDistance: 10
   timeSlowsDown: 0
   navigator: {fileID: 282079015}
   colliders:
@@ -4675,6 +4677,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsTrigger
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3502650395120447696, guid: a22ba7bf123b73349b19924bdc957cdb,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3502650395120447696, guid: a22ba7bf123b73349b19924bdc957cdb,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3502650395120447696, guid: a22ba7bf123b73349b19924bdc957cdb,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3502650394042222857, guid: a22ba7bf123b73349b19924bdc957cdb,
         type: 3}
