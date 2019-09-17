@@ -3201,7 +3201,7 @@ MonoBehaviour:
   rotationSpeed: 10
   movementSpeed: 20
   minMovementDistance: 1
-  maxMovementDistance: 10
+  maxMovementDistance: 20
   timeSlowsDown: 0
   navigator: {fileID: 282079015}
   colliders:

@@ -88,9 +88,11 @@ public class PlayerController : MonoBehaviour
             }
             Vector3 point = hit.point;
             point.y = transform.position.y;
+            if (Vector3.Distance(transform.position, point) > maxMovementDistance)
+                navigator.transform.position = (point - transform.position).normalized * maxMovementDistance + transform.position;
+            else
                 navigator.transform.position = point;
-          
-            _rotateCoroutine = StartCoroutine(RotateToClick(navigator.transform.position - transform.position, rotationSpeed / 100));
+           _rotateCoroutine = StartCoroutine(RotateToClick(navigator.transform.position - transform.position, rotationSpeed / 100));
         }
     }
 
