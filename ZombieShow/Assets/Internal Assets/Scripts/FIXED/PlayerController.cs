@@ -6,20 +6,24 @@ using UnityEngine.UI;
 public class PlayerController : MonoBehaviour
 {
     [Header("Pause, death, gameplay stop")]
+    public AudioSource slashEffectSound;
     public bool gameplayIsActive = true;
+    public GameObject slashPrefab;
     [SerializeField]
     public LineRenderer _directionLine;
 
+    [Header("Players Damage")]
     public float damage;
-
+    [Header("Players Health")]
     public float health;
-
     public float maxHealth;
 
-
+    [Header("Movement Parameters")]
     public float rotationSpeed = 10;
-
     public float movementSpeed = 5;
+    [Header("Movement Distance")]
+    public float minMovementDistance = 1f;
+    public float maxMovementDistance = 10;
 
     public float timeSlowsDown;
     public GameObject navigator;
@@ -28,10 +32,12 @@ public class PlayerController : MonoBehaviour
     Coroutine _rotateCoroutine;
     public bool doMovement;
     public bool imAttacking;
+    public bool imHitEnemy;
 
     [Header("Player Canvas")]
     public Canvas HealthCanvas;
     public Image playerHealthImage;
+    public HitPlayerEffect hitEffect;
     
 
 
@@ -62,6 +68,7 @@ public class PlayerController : MonoBehaviour
             }
 
             MovementAction();
+            SlashController();
         }
     }
 
@@ -79,10 +86,13 @@ public class PlayerController : MonoBehaviour
                 StopCoroutine(_rotateCoroutine);
                 _rotateCoroutine = null;
             }
-            var point = hit.point;
+            Vector3 point = hit.point;
             point.y = transform.position.y;
-            navigator.transform.position = point;
-            _rotateCoroutine = StartCoroutine(RotateToClick(navigator.transform.position - transform.position, rotationSpeed / 100));
+            if (Vector3.Distance(transform.position, point) > maxMovementDistance)
+                navigator.transform.position = (point - transform.position).normalized * maxMovementDistance + transform.position;
+            else
+                navigator.transform.position = point;
+           _rotateCoroutine = StartCoroutine(RotateToClick(navigator.transform.position - transform.position, rotationSpeed / 100));
         }
     }
 
@@ -100,6 +110,10 @@ public class PlayerController : MonoBehaviour
         Time.timeScale = 1f;
         _directionLine.enabled = false;
         doMovement = true;
+
+        if (slashEffectSound !=null)
+        if (!slashEffectSound.isPlaying) 
+        slashEffectSound.Play();
         
     }
 
@@ -118,10 +132,12 @@ public class PlayerController : MonoBehaviour
             {
                 doMovement = false;
                 imAttacking = false;
+                return;
             }
-            return;
+            
         }
     }
+
 
     public IEnumerator RotateToClick(Vector3 newLocalTarget, float time)
     {
@@ -141,5 +157,19 @@ public class PlayerController : MonoBehaviour
     public void UIHealthDemonstration()
     {
         playerHealthImage.fillAmount = health / maxHealth;
+    }
+
+    public void SlashController()
+    {
+        if (imHitEnemy)
+        {
+            if (slashPrefab != null)
+            {
+                GameObject slash = Instantiate(slashPrefab);
+                slash.transform.rotation = transform.rotation;
+                Destroy(slash, 3);
+            }
+        }
+        imHitEnemy = false;
     }
 }

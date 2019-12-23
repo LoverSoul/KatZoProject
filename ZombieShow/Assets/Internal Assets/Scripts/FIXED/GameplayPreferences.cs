@@ -9,6 +9,7 @@ public class GameplayPreferences : MonoBehaviour
 
     [Header("Player Configuration")]
     PlayerController player;
+    public GameObject slashPrefab;
     public  float playerHealth;
     public  float playerMaxHealth;
     public  float playerRotationSpeed;
@@ -17,7 +18,10 @@ public class GameplayPreferences : MonoBehaviour
 
     [Header("Enemy Configuration")]
     GameControllerFixed controller;
+    public GameObject enemy;
+    public GameObject enemyHitPrefab;
     public float enemyHealth;
+    public float enemyMaxHealth;
     public float enemyDamage;
     public float enemyMinimumSpeed;
     public float enemyMaximumSpeed;
@@ -52,7 +56,11 @@ public class GameplayPreferences : MonoBehaviour
         player.movementSpeed = playerMovementSpeed;
         player.damage = playerDamage;
         player.timeSlowsDown = timeSlowsDown;
+        player.slashPrefab = slashPrefab;
+        controller.enemyPrefab = enemy;
+        controller.enemyHitPrefab = enemyHitPrefab;
         controller.enemyHealth = enemyHealth;
+        controller.enemyMaxHealth = enemyMaxHealth;
         controller.enemyMinimumSpeed = enemyMinimumSpeed;
         controller.enemyMaximumSpeed = enemyMaximumSpeed;
         controller.enemyDamage = enemyDamage;

@@ -291,46 +291,46 @@
  <HintPath>C:/Program Files/Unity/Hub/Editor/2018.4.4f1/Editor/Data/PlaybackEngines/windowsstandalonesupport/UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
  </Reference>
  <Reference Include="DemiLib">
- <HintPath>C:/Users/Герман/Documents/Unity Projects/ZombieShow/Assets/External Assets/Demigiant/DemiLib/Core/DemiLib.dll</HintPath>
+ <HintPath>C:/Users/Герман/Documents/GitHub/KatZoProject/ZombieShow/Assets/External Assets/Demigiant/DemiLib/Core/DemiLib.dll</HintPath>
  </Reference>
  <Reference Include="DemiEditor">
- <HintPath>C:/Users/Герман/Documents/Unity Projects/ZombieShow/Assets/External Assets/Demigiant/DemiLib/Core/Editor/DemiEditor.dll</HintPath>
+ <HintPath>C:/Users/Герман/Documents/GitHub/KatZoProject/ZombieShow/Assets/External Assets/Demigiant/DemiLib/Core/Editor/DemiEditor.dll</HintPath>
  </Reference>
  <Reference Include="DOTween">
- <HintPath>C:/Users/Герман/Documents/Unity Projects/ZombieShow/Assets/External Assets/Demigiant/DOTween/DOTween.dll</HintPath>
+ <HintPath>C:/Users/Герман/Documents/GitHub/KatZoProject/ZombieShow/Assets/External Assets/Demigiant/DOTween/DOTween.dll</HintPath>
  </Reference>
  <Reference Include="DOTween43">
- <HintPath>C:/Users/Герман/Documents/Unity Projects/ZombieShow/Assets/External Assets/Demigiant/DOTween/DOTween43.dll</HintPath>
+ <HintPath>C:/Users/Герман/Documents/GitHub/KatZoProject/ZombieShow/Assets/External Assets/Demigiant/DOTween/DOTween43.dll</HintPath>
  </Reference>
  <Reference Include="DOTween46">
- <HintPath>C:/Users/Герман/Documents/Unity Projects/ZombieShow/Assets/External Assets/Demigiant/DOTween/DOTween46.dll</HintPath>
+ <HintPath>C:/Users/Герман/Documents/GitHub/KatZoProject/ZombieShow/Assets/External Assets/Demigiant/DOTween/DOTween46.dll</HintPath>
  </Reference>
  <Reference Include="DOTween50">
- <HintPath>C:/Users/Герман/Documents/Unity Projects/ZombieShow/Assets/External Assets/Demigiant/DOTween/DOTween50.dll</HintPath>
+ <HintPath>C:/Users/Герман/Documents/GitHub/KatZoProject/ZombieShow/Assets/External Assets/Demigiant/DOTween/DOTween50.dll</HintPath>
  </Reference>
  <Reference Include="DOTweenEditor">
- <HintPath>C:/Users/Герман/Documents/Unity Projects/ZombieShow/Assets/External Assets/Demigiant/DOTween/Editor/DOTweenEditor.dll</HintPath>
+ <HintPath>C:/Users/Герман/Documents/GitHub/KatZoProject/ZombieShow/Assets/External Assets/Demigiant/DOTween/Editor/DOTweenEditor.dll</HintPath>
  </Reference>
  <Reference Include="DOTweenPro">
- <HintPath>C:/Users/Герман/Documents/Unity Projects/ZombieShow/Assets/External Assets/Demigiant/DOTweenPro/DOTweenPro.dll</HintPath>
+ <HintPath>C:/Users/Герман/Documents/GitHub/KatZoProject/ZombieShow/Assets/External Assets/Demigiant/DOTweenPro/DOTweenPro.dll</HintPath>
  </Reference>
  <Reference Include="DOTweenProEditor">
- <HintPath>C:/Users/Герман/Documents/Unity Projects/ZombieShow/Assets/External Assets/Demigiant/DOTweenPro/Editor/DOTweenProEditor.dll</HintPath>
+ <HintPath>C:/Users/Герман/Documents/GitHub/KatZoProject/ZombieShow/Assets/External Assets/Demigiant/DOTweenPro/Editor/DOTweenProEditor.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.Advertisements">
- <HintPath>C:/Users/Герман/Documents/Unity Projects/ZombieShow/Library/PackageCache/com.unity.ads@2.0.8/Editor/UnityEditor.Advertisements.dll</HintPath>
+ <HintPath>C:/Users/Герман/Documents/GitHub/KatZoProject/ZombieShow/Library/PackageCache/com.unity.ads@2.0.8/Editor/UnityEditor.Advertisements.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Analytics.Editor">
- <HintPath>C:/Users/Герман/Documents/Unity Projects/ZombieShow/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll</HintPath>
+ <HintPath>C:/Users/Герман/Documents/GitHub/KatZoProject/ZombieShow/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Analytics.StandardEvents">
- <HintPath>C:/Users/Герман/Documents/Unity Projects/ZombieShow/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.StandardEvents.dll</HintPath>
+ <HintPath>C:/Users/Герман/Documents/GitHub/KatZoProject/ZombieShow/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.StandardEvents.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Analytics.Tracker">
- <HintPath>C:/Users/Герман/Documents/Unity Projects/ZombieShow/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
+ <HintPath>C:/Users/Герман/Documents/GitHub/KatZoProject/ZombieShow/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.Purchasing">
- <HintPath>C:/Users/Герман/Documents/Unity Projects/ZombieShow/Library/PackageCache/com.unity.purchasing@2.0.3/Editor/UnityEditor.Purchasing.dll</HintPath>
+ <HintPath>C:/Users/Герман/Documents/GitHub/KatZoProject/ZombieShow/Library/PackageCache/com.unity.purchasing@2.0.3/Editor/UnityEditor.Purchasing.dll</HintPath>
  </Reference>
  <Reference Include="mscorlib">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2018.4.4f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>

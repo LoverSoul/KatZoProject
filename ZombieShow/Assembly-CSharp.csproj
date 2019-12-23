@@ -53,45 +53,45 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\External Assets\Demigiant\DOTweenPro\DOTweenAnimation.cs" />
-     <Compile Include="Assets\Internal Assets\Scripts\Controllers\Container.cs" />
-     <Compile Include="Assets\Internal Assets\Scripts\Controllers\GameController.cs" />
-     <Compile Include="Assets\Internal Assets\Scripts\Controllers\IController.cs" />
-     <Compile Include="Assets\Internal Assets\Scripts\Controllers\IPoolable.cs" />
-     <Compile Include="Assets\Internal Assets\Scripts\Controllers\Player.cs" />
-     <Compile Include="Assets\Internal Assets\Scripts\Controllers\PoolController.cs" />
-     <Compile Include="Assets\Internal Assets\Scripts\Enemy.cs" />
+     <Compile Include="Assets\ExternalAssets\SimpleAndroidNotifications\NotificationExample.cs" />
+     <Compile Include="Assets\ExternalAssets\SimpleAndroidNotifications\NotificationIcon.cs" />
+     <Compile Include="Assets\ExternalAssets\SimpleAndroidNotifications\NotificationManager.cs" />
+     <Compile Include="Assets\ExternalAssets\SimpleAndroidNotifications\NotificationParams.cs" />
+     <Compile Include="Assets\FacebookSDK\Examples\Scripts\ConsoleBase.cs" />
+     <Compile Include="Assets\FacebookSDK\Examples\Scripts\LogView.cs" />
+     <Compile Include="Assets\FacebookSDK\Examples\Scripts\MenuBase.cs" />
+     <Compile Include="Assets\FacebookSDK\Examples\Scripts\SubMenus\AccessTokenMenu.cs" />
+     <Compile Include="Assets\FacebookSDK\Examples\Scripts\SubMenus\AppEvents.cs" />
+     <Compile Include="Assets\FacebookSDK\Examples\Scripts\SubMenus\AppLinks.cs" />
+     <Compile Include="Assets\FacebookSDK\Examples\Scripts\SubMenus\AppRequests.cs" />
+     <Compile Include="Assets\FacebookSDK\Examples\Scripts\SubMenus\DialogShare.cs" />
+     <Compile Include="Assets\FacebookSDK\Examples\Scripts\SubMenus\GraphRequest.cs" />
+     <Compile Include="Assets\FacebookSDK\Examples\Scripts\SubMenus\MainMenu.cs" />
+     <Compile Include="Assets\FacebookSDK\Examples\Scripts\SubMenus\Pay.cs" />
+     <Compile Include="Assets\Internal Assets\Scripts\FB_Configure.cs" />
      <Compile Include="Assets\Internal Assets\Scripts\FIXED\EnemyController.cs" />
      <Compile Include="Assets\Internal Assets\Scripts\FIXED\GameControllerFixed.cs" />
      <Compile Include="Assets\Internal Assets\Scripts\FIXED\GameplayPreferences.cs" />
+     <Compile Include="Assets\Internal Assets\Scripts\FIXED\HitPlayerEffect.cs" />
+     <Compile Include="Assets\Internal Assets\Scripts\FIXED\Notifications.cs" />
      <Compile Include="Assets\Internal Assets\Scripts\FIXED\PlayerController.cs" />
-     <Compile Include="Assets\Internal Assets\Scripts\Utilites\Constants.cs" />
-     <Compile Include="Assets\Internal Assets\Scripts\Utilites\FpsToText.cs" />
-     <Compile Include="Assets\Internal Assets\Scripts\Utilites\Utilites.cs" />
-     <Compile Include="Assets\Internal Assets\Scripts\Utilites\Vibration.cs" />
-     <Compile Include="Assets\Scripts\test.cs" />
-     <None Include="Assets\External Assets\Demigiant\DOTweenPro\readme.txt" />
-     <None Include="Assets\External Assets\Demigiant\DemiLib\Core\DemiLib.xml" />
-     <None Include="Assets\External Assets\Demigiant\DOTween\DOTween50.xml" />
-     <None Include="Assets\External Assets\Demigiant\DOTween\DOTween46.xml" />
-     <None Include="Assets\External Assets\Demigiant\DOTween\readme.txt" />
-     <None Include="Assets\External Assets\UniRx\ReadMe.txt" />
-     <None Include="Assets\External Assets\Demigiant\DOTween\DOTween43.xml" />
-     <None Include="Assets\External Assets\Demigiant\readme_DOTweenPro.txt" />
+     <Compile Include="Assets\Internal Assets\Scripts\UI\UIControllerScript.cs" />
+     <None Include="Assets\Internal Assets\Shaders\OptimisationShader.shader" />
+     <None Include="Assets\FacebookSDK\link.xml" />
  <Reference Include="Unity.TextMeshPro.Editor">
- <HintPath>C:/Users/Герман/Documents/Unity Projects/ZombieShow/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+ <HintPath>C:/Users/Герман/Documents/GitHub/KatZoProject/ZombieShow/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.PackageManagerUI.Editor">
- <HintPath>C:/Users/Герман/Documents/Unity Projects/ZombieShow/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+ <HintPath>C:/Users/Герман/Documents/GitHub/KatZoProject/ZombieShow/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.CollabProxy.Editor">
- <HintPath>C:/Users/Герман/Documents/Unity Projects/ZombieShow/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+ <HintPath>C:/Users/Герман/Documents/GitHub/KatZoProject/ZombieShow/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro">
- <HintPath>C:/Users/Герман/Documents/Unity Projects/ZombieShow/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+ <HintPath>C:/Users/Герман/Documents/GitHub/KatZoProject/ZombieShow/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Analytics.DataPrivacy">
- <HintPath>C:/Users/Герман/Documents/Unity Projects/ZombieShow/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
+ <HintPath>C:/Users/Герман/Documents/GitHub/KatZoProject/ZombieShow/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.AIModule">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2018.4.4f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -291,32 +291,32 @@
  <Reference Include="UnityEngine.SpatialTracking">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2018.4.4f1/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
  </Reference>
- <Reference Include="DemiLib">
- <HintPath>C:/Users/Герман/Documents/Unity Projects/ZombieShow/Assets/External Assets/Demigiant/DemiLib/Core/DemiLib.dll</HintPath>
+ <Reference Include="Facebook.Unity">
+ <HintPath>C:/Users/Герман/Documents/GitHub/KatZoProject/ZombieShow/Assets/FacebookSDK/Plugins/Facebook.Unity.dll</HintPath>
  </Reference>
- <Reference Include="DOTween">
- <HintPath>C:/Users/Герман/Documents/Unity Projects/ZombieShow/Assets/External Assets/Demigiant/DOTween/DOTween.dll</HintPath>
+ <Reference Include="Facebook.Unity.Gameroom">
+ <HintPath>C:/Users/Герман/Documents/GitHub/KatZoProject/ZombieShow/Assets/FacebookSDK/Plugins/Gameroom/Facebook.Unity.Gameroom.dll</HintPath>
  </Reference>
- <Reference Include="DOTween43">
- <HintPath>C:/Users/Герман/Documents/Unity Projects/ZombieShow/Assets/External Assets/Demigiant/DOTween/DOTween43.dll</HintPath>
+ <Reference Include="FacebookNamedPipeClient">
+ <HintPath>C:/Users/Герман/Documents/GitHub/KatZoProject/ZombieShow/Assets/FacebookSDK/Plugins/Gameroom/FacebookNamedPipeClient.dll</HintPath>
  </Reference>
- <Reference Include="DOTween46">
- <HintPath>C:/Users/Герман/Documents/Unity Projects/ZombieShow/Assets/External Assets/Demigiant/DOTween/DOTween46.dll</HintPath>
+ <Reference Include="Facebook.Unity.Android">
+ <HintPath>C:/Users/Герман/Documents/GitHub/KatZoProject/ZombieShow/Assets/FacebookSDK/Plugins/iOS/Facebook.Unity.Android.dll</HintPath>
  </Reference>
- <Reference Include="DOTween50">
- <HintPath>C:/Users/Герман/Documents/Unity Projects/ZombieShow/Assets/External Assets/Demigiant/DOTween/DOTween50.dll</HintPath>
+ <Reference Include="Facebook.Unity.IOS">
+ <HintPath>C:/Users/Герман/Documents/GitHub/KatZoProject/ZombieShow/Assets/FacebookSDK/Plugins/iOS/Facebook.Unity.IOS.dll</HintPath>
  </Reference>
- <Reference Include="DOTweenPro">
- <HintPath>C:/Users/Герман/Documents/Unity Projects/ZombieShow/Assets/External Assets/Demigiant/DOTweenPro/DOTweenPro.dll</HintPath>
+ <Reference Include="Facebook.Unity.Settings">
+ <HintPath>C:/Users/Герман/Documents/GitHub/KatZoProject/ZombieShow/Assets/FacebookSDK/Plugins/Settings/Facebook.Unity.Settings.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Analytics.Editor">
- <HintPath>C:/Users/Герман/Documents/Unity Projects/ZombieShow/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll</HintPath>
+ <HintPath>C:/Users/Герман/Documents/GitHub/KatZoProject/ZombieShow/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Analytics.StandardEvents">
- <HintPath>C:/Users/Герман/Documents/Unity Projects/ZombieShow/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.StandardEvents.dll</HintPath>
+ <HintPath>C:/Users/Герман/Documents/GitHub/KatZoProject/ZombieShow/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.StandardEvents.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Analytics.Tracker">
- <HintPath>C:/Users/Герман/Documents/Unity Projects/ZombieShow/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
+ <HintPath>C:/Users/Герман/Documents/GitHub/KatZoProject/ZombieShow/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
  </Reference>
  <Reference Include="netstandard">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2018.4.4f1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>
@@ -663,14 +663,6 @@
  <Reference Include="System.Xml.Serialization">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2018.4.4f1/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.Xml.Serialization.dll</HintPath>
  </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="UniRx.csproj">
-      <Project>{90A6A01D-3C5F-8FFF-3C8B-F1E6E292FDBA}</Project>      <Name>UniRx</Name>    </ProjectReference>
-    <ProjectReference Include="UniRx.Async.csproj">
-      <Project>{76E59FD0-3DD6-BE07-C937-6FC75D102D87}</Project>      <Name>UniRx.Async</Name>    </ProjectReference>
-    <ProjectReference Include="UniRx.Async.Editor.csproj">
-      <Project>{8FE456FB-84FB-5A5C-1CBD-04E1B61CD74F}</Project>      <Name>UniRx.Async.Editor</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
